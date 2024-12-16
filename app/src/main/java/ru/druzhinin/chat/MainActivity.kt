@@ -36,14 +36,6 @@ class MainActivity : ComponentActivity() {
 fun Main() {
     Scaffold(
         modifier = Modifier.fillMaxSize(),
-        topBar = {
-            TopAppBar(title = {
-                Text("dkjsgnf")
-            })
-        },
-        bottomBar = {
-            NavigationBar {  }
-        }
     ) { innerPadding ->
         Box(modifier = Modifier.padding(innerPadding)){
 
