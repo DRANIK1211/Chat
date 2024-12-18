@@ -18,11 +18,21 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import ru.druzhinin.chat.mainChats.components.status.UserStatus
+import ru.druzhinin.chat.mainChats.components.status.components.Status
+import ru.druzhinin.chat.mainChats.components.status.defaultAvatarURL
 import ru.druzhinin.chat.ui.theme.ChatTheme
 
 
+val status = mutableListOf<Status>(
+    Status(1, defaultAvatarURL),
+    Status(2, defaultAvatarURL),
+    Status(3, defaultAvatarURL),
+    Status(4, defaultAvatarURL),
+    Status(5, defaultAvatarURL)
+)
+
 @Composable
-fun Chats(){
+fun Chats(status: MutableList<Status>){
     Column {
         Text(
             text = "Chat",
@@ -38,7 +48,7 @@ fun Chats(){
         )
         LazyColumn {
             item {
-                UserStatus()
+                UserStatus(status = status)
                 // TODO("Добавить UserChats аналогично UserStatus")
             }
         }
@@ -51,6 +61,6 @@ fun Chats(){
 @Composable
 fun ChatsPreview(){
     ChatTheme {
-        Chats()
+        Chats(status = status)
     }
 }
