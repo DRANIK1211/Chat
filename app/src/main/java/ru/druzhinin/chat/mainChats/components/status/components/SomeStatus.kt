@@ -36,6 +36,7 @@ fun SomeStatus(status: Status) {
         model = status.avatar,
         contentDescription = null,
         modifier = Modifier
+            .padding(end = 5.dp)
             .border(3.dp, Color.Green, CircleShape)
             .padding(5.dp)
             .clip(

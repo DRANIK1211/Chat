@@ -4,6 +4,7 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.ExperimentalMaterial3Api
@@ -20,6 +21,10 @@ import ru.druzhinin.chat.mainChats.components.status.UserStatus
 import ru.druzhinin.chat.mainChats.components.status.components.SomeStatus
 import ru.druzhinin.chat.mainChats.components.status.components.Status
 import ru.druzhinin.chat.mainChats.components.status.components.defaultAvatarURL
+import ru.druzhinin.chat.mainChats.components.userChats.UserChats
+import ru.druzhinin.chat.mainChats.components.userChats.components.Chat
+import ru.druzhinin.chat.mainChats.components.userChats.components.SomeChat
+import ru.druzhinin.chat.mainChats.components.userChats.components.htt
 import ru.druzhinin.chat.ui.theme.ChatTheme
 
 val status = mutableListOf<Status>(
@@ -32,6 +37,21 @@ val status = mutableListOf<Status>(
     Status(7, ru.druzhinin.chat.mainChats.components.status.defaultAvatarURL),
 
 )
+val chats = mutableListOf(
+    Chat(1, htt, "asd"),
+    Chat(2, htt, "sdfg"),
+    Chat(3, htt, "dkj"),
+    Chat(4, htt, "xcvn"),
+    Chat(5, htt, "fsfh"),
+    Chat(6, htt, "vcnuj"),
+    Chat(7, htt, "xvbnjud"),
+    Chat(8, htt, "xvbngjsgzn"),
+    Chat(9, htt, "xbvh"),
+    Chat(10, htt, "xcccccvn"),
+    Chat(11, htt, ""),
+    Chat(12, htt, "xcvn"),
+)
+
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -51,8 +71,8 @@ fun Main() {
     Scaffold(
         modifier = Modifier.fillMaxSize(),
     ) { innerPadding ->
-        Box(modifier = Modifier.padding(innerPadding)){
-            Chats(status = status)
+        Column(modifier = Modifier.padding(innerPadding)){
+            Chats(status, chats)
 
         }
     }
